@@ -23,7 +23,7 @@ async def simulate(params: SimulationParams):
     else:
         observer_func = lambda x: 0
 
-    sim_params = params.dict()
+    sim_params = params.model_dump()
     sim_params["observer_func"] = observer_func
 
     roh_data, info_data = run_simulation(sim_params)

@@ -1,0 +1,30 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-panel {
+  width: 30%;
+  padding: 20px;
+}
+
+.right-panel {
+  width: 70%;
+  padding: 20px;
+}
+
+.panel {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
