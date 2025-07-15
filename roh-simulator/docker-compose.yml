@@ -7,6 +7,8 @@ services:
       - "8000:8000"
     volumes:
       - ./server:/app
+    environment:
+      - GEMINI_API_KEY=YOUR_API_KEY
   frontend:
     build: ./client
     ports:

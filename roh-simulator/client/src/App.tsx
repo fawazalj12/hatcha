@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import ParameterPanel from './components/ParameterPanel';
 import SimulationCanvas from './components/SimulationCanvas';
@@ -6,6 +6,8 @@ import AIAssistantPanel from './components/AIAssistantPanel';
 import ExportControl from './components/ExportControl';
 
 function App() {
+  const [simulationData, setSimulationData] = useState(null);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -14,11 +16,11 @@ function App() {
       <main>
         <div className="main-container">
           <div className="left-panel">
-            <ParameterPanel />
+            <ParameterPanel setSimulationData={setSimulationData} />
             <AIAssistantPanel />
           </div>
           <div className="right-panel">
-            <SimulationCanvas />
+            <SimulationCanvas simulationData={simulationData} />
             <ExportControl />
           </div>
         </div>

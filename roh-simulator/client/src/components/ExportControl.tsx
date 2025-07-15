@@ -4,7 +4,9 @@ const ExportControl = () => {
   return (
     <div className="panel">
       <h2>Export</h2>
-      {/* Add export buttons here */}
+      <button>Export as Image</button>
+      <button>Export as Video</button>
+      <button>Export as CSV</button>
     </div>
   );
 };
