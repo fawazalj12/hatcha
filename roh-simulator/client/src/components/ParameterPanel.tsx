@@ -8,7 +8,7 @@ const ParameterPanel: React.FC<ParameterPanelProps> = ({ setSimulationData }) =>
   const [freq, setFreq] = useState(10.0);
   const [amp, setAmp] = useState(1.0);
   const [harmonics, setHarmonics] = useState(4);
-  const [observerFunc, setObserverFunc] = useState('');
+  const [observerFunc, setObserverFunc] = useState('lambda x: x');
 
   const runSimulation = async () => {
     const response = await fetch('/simulate', {
@@ -65,11 +65,17 @@ const ParameterPanel: React.FC<ParameterPanelProps> = ({ setSimulationData }) =>
         <span>{harmonics}</span>
       </div>
       <div>
-        <label>Observer Function:</label>
+        <h3>Custom Observer Function</h3>
+        <p>
+          Enter a Python lambda function that takes one argument (x) and returns a number.
+          <br />
+          Example: <code>lambda x: x**2 * np.sin(x)</code>
+        </p>
         <input
           type="text"
           value={observerFunc}
           onChange={(e) => setObserverFunc(e.target.value)}
+          style={{ width: '100%', padding: '10px' }}
         />
       </div>
       <button onClick={runSimulation}>Run Simulation</button>

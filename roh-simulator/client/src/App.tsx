@@ -21,7 +21,7 @@ function App() {
           </div>
           <div className="right-panel">
             <SimulationCanvas simulationData={simulationData} />
-            <ExportControl />
+            <ExportControl simulationData={simulationData} />
           </div>
         </div>
       </main>
